@@ -1,0 +1,182 @@
+*{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+html,body {
+    height: 100%;
+    width: 100%;
+}
+
+.main-menu {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+.pop {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.4);
+    display: none;
+}
+.ball {
+    position: absolute;
+    width: 394px;
+    height: 386px;
+    bottom:-200px;
+    left: 50%;
+    transform: translateX(-50%) scale(.3);
+    background: url('../imgs/eye-inner.png') no-repeat;
+    background-size: 100% 100%;
+    transition: all 1s;
+    z-index: 1;
+}
+.ball.active {
+    bottom:50%;
+    left: 50%;
+    transform: translate(-50%,50%) scale(1);
+}
+.light-scroll1{
+    position: absolute;
+    background: url('../imgs/light-scroll.png') no-repeat;
+    width: 333px;
+    height: 334px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%) rotate(0deg);
+    animation: scroll 10s linear infinite;
+}
+@keyframes scroll {
+    from {
+        transform:translate(-50%,-50%) rotate(0deg);
+    }
+    to {
+        transform:translate(-50%,-50%) rotate(360deg)
+    }
+}
+.light-scroll2{
+    position: absolute;
+    background: url('../imgs/light-scroll.png') no-repeat;
+    width: 333px;
+    height: 334px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%) rotate(0deg);
+    animation: scroll 10s linear infinite;
+}
+.box{
+    width: 838px;
+    height: 838px;
+    position: relative;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    overflow: hidden;
+    display: none;
+    background: url('../imgs/eye.png') no-repeat;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 9999;
+}
+.hightlight {
+    width: 838px;
+    height: 838px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    overflow: hidden;
+    background: url('../imgs/hightlight.png') no-repeat;
+    z-index: -1;
+    opacity: .1;
+    animation:light 2s linear infinite alternate;
+}
+@keyframes light {
+    33% {
+        opacity:.3;
+    }
+    66% {
+        opacity: .6;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.cirOut{
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    background: transparent;
+    overflow: hidden;
+    position: relative;
+    transition: .5s;
+    -webkit-transition: .5s;
+    left:50%;
+    top:50%;
+    -webkit-transform: translate(-50%,-50%) rotate(75deg) scale(.3);
+    transform: translate(-50%,-50%) rotate(75deg) scale(.3);
+}
+.cirOut.active {
+    -webkit-transform: translate(-50%,-50%) rotate(75deg) scale(1);
+    transform: translate(-50%,-50%) rotate(75deg) scale(1);
+}
+.circle{
+    width:394px;
+    height:386px;
+    border-radius:50%;
+    background:url('../imgs/eye-inner.png') no-repeat;
+    text-align:center;
+    position:absolute;
+    margin-left: -190px;
+    left:50%;
+    top:50%;
+    margin-top: -188px;
+    transition:.5s;
+    -webkit-transition:.5s;
+}
+
+/* .circle.active{
+    background:#36F
+} */
+ 
+.cirOut li{
+    width: 300px;
+    height: 300px;
+    border-bottom: 1px solid #014dc0;
+    border-right: 1px solid #014dc0;
+    overflow: hidden;
+    position: absolute;
+    transform-origin: right bottom;
+    -webkit-transform-origin: right bottom;
+    z-index: 2;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+}
+.cirOut li.Bg.hover{
+    background: linear-gradient(to top,#276d07,#3ece11);
+    z-index:1;
+}
+.cirOut li a{
+    display:block;
+    width:300px;
+    height:200px;
+    text-align:center;
+    position:absolute;
+    bottom:-100px;
+    left:0;
+}
+.cirOut li a span{
+    display: inline-block;
+    width: 70px;
+    position: absolute;
+    color: #fff;
+}
+/*li:nth-of-type(1){transform:rotate(0deg) skew(60deg);}
+li:nth-of-type(2){transform:rotate(30deg) skew(60deg);}
+li:nth-of-type(3){transform:rotate(60deg) skew(60deg);}
+li:nth-of-type(4){transform:rotate(90deg) skew(60deg);}*/
